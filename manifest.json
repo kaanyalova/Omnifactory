@@ -18,7 +18,18 @@
       "name": "Applied Energistics 2 Trousers Edition",
       "url": "https://github.com/PrototypeTrousers/Applied-Energistics-2/releases/download/omni-fixes-v45/appliedenergistics2-rv6-stable-7.omni-fixes-v45i.jar",
       "sha": "a5f8e1e69b01a2957bc17667a04dfef07d93e2b7"
+    },
+    {
+      "name": "Plustic",
+      "url": "https://github.com/Landmaster/PlusTiC/releases/download/8.0.0.1/plustic-8.0.0.1.jar",
+      "sha": "4b20236a19e7eff9e5967a4d2ec39e0b863ccf57"
+    },
+    {
+      "name": "Optifine",
+      "url": "https://github.com/kaanyalova/Omnifactory/raw/custom/OptiFine_1.12.2_HD_U_G5.jar",
+      "sha": "ca3aea3a09ce215906c346fe190907fe0347b0c4"
     }
+
   ],
   "files": [
     {
@@ -785,7 +796,35 @@
       "projectID": 361579,
       "fileID": 3164181,
       "required": true
+    },
+    {
+      "projectID": 74072,
+      "fileID": 2902483,
+      "required": true
+    
+    },
+    {
+      "projectID": 272514,
+      "fileID": 2962052,
+      "required": true
+    },
+    {
+      "projectID": 250957,
+      "fileID": 2630860,
+      "required": true
+    },
+    {
+      "projectID": 74924,
+      "fileID": 2713386,
+      "required": true
+    },
+    {
+      "projectID": 290209,
+      "fileID": 2704404,
+      "required": true
     }
+
+
   ],
   "overrides": "overrides"
 }
