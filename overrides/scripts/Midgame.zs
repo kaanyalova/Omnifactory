@@ -327,3 +327,9 @@ fluid_canner.recipeBuilder()
 	.outputs(<minecraft:experience_bottle>)
 	.duration(1500).EUt(4).buildAndRegister();
 
+//Buff bpa recipe 
+reactor.findRecipe(30, [null], [<liquid:phenol> * 2000, <liquid:acetone> * 1000, <liquid:hydrochloric_acid> * 1000]).remove();
+reactor.recipeBuilder()
+	.fluidInputs(<liquid:phenol> * 2000, <liquid:acetone> * 1000, <liquid:hydrochloric_acid> * 1000)
+	.fluidOutputs(<liquid:bisphenol_a> * 1000, <liquid:diluted_hydrochloric_acid> * 2000)
+	.EUt(30).duration(160).buildAndRegister();
