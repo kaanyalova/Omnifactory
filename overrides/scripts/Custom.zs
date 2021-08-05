@@ -18,12 +18,18 @@ reactor.recipeBuilder()
 //remove molten infinity ingot 
 mods.tconstruct.Melting.removeRecipe(<liquid:infinity>);
 
-//recipe for glitched heart
+//recipe for glitched heart 
+mixer.recipeBuilder()
+	.Inputs([<enderio:item_material:56> * 1, <enderio:item_material:43> * 1, <enderio:item_material:41> * 1])
+	.fluidInputs([<liquid:nutrient_distillation>* 1000])
+	.fluidOutputs(<liquid:difficulty_essence>*1000)
+	.EUt(120).duration(100).buildAndRegister();
+
 reactor.recipeBuilder()
-	.inputs(<armorplus:material:3>*4)
-	.fluidInputs(<fluid:nutrient_distillation>*1000)
+	.Inputs(<armorplus:material:3>*4)
+	.fluidInputs([<liquid:difficulty_essence>*250])
 	.outputs(<deepmoblearning:glitch_heart>)
-	.EUt(420).duration(200).buildAndRegister ();
+	.EUt(120).duration(100).buildAndRegister ();
 
 //change tool forge recipe
 //cannot use gregtech aluminium block texture for some reason 
@@ -33,4 +39,33 @@ recipes.addRecipe("toolforge", <tconstruct:toolforge:0>.withTag({textureBlock: {
 [<gregtech:meta_block_compressed_0:1>, <tconstruct:tooltables:3>, <gregtech:meta_block_compressed_0:1>],
 [<gregtech:meta_block_compressed_0:1>, null, <gregtech:meta_block_compressed_0:1>]]);
 
+
+//recipes for rftools power storage
+
+//remove all recipes
+recipes.removeByMod("rftoolspower");
+
+//tier one
+recipes.addRecipe("rfcell1", <rftoolspower:cell1>, [
+[<gregtech:meta_item_1:32538>, <enderio:block_cap_bank:3>, <gregtech:meta_item_1:32538>],
+[<thermalexpansion:capacitor:1>, <gregtech:meta_item_1:32671>, <thermalexpansion:capacitor:1>],
+[<gregtech:meta_item_1:32538>, <thermalexpansion:capacitor:1> , <gregtech:meta_item_1:32538>]]);
+
+//tier two
+recipes.addRecipe("rfcell2", <rftoolspower:cell2>, [
+[<gregtech:meta_item_2:32213>, <rftoolspower:cell1>,<gregtech:meta_item_2:32213>],
+[<thermalexpansion:capacitor:2>, <gregtech:meta_item_1:32672>, <thermalexpansion:capacitor:2>],
+[<gregtech:meta_item_2:32213>, <thermalexpansion:capacitor:2>,<gregtech:meta_item_2:32213>]]);
+
+//tier three
+recipes.addRecipe("rfcell3", <rftoolspower:cell3>, [
+[<gregtech:meta_item_1:32597>, <rftoolspower:cell2:0>, <gregtech:meta_item_1:32597>],
+[<thermalexpansion:capacitor:3>,<gregtech:meta_item_1:32673>,<thermalexpansion:capacitor:3>],
+[<gregtech:meta_item_1:32597>, <thermalexpansion:capacitor:3>, <gregtech:meta_item_1:32597>]]);
+
+//screen
+recipes.addRecipe("rfscreen", <rftoolspower:information_screen>, [
+[null, null, null],
+[<minecraft:glass_pane>, <minecraft:glass_pane>, <minecraft:glass_pane>],
+[<minecraft:redstone>, <minecraft:iron_block>, <minecraft:redstone> ]]);
 
