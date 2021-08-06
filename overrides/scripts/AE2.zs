@@ -193,7 +193,7 @@ recipes.addShaped(<appliedenergistics2:condenser>, [
 	[<gregtech:meta_item_1:12072>,<gregtech:meta_item_1:12072>,<gregtech:meta_item_1:12072>]]);
 
 //Advanced Wireless Part	
-recipes.addShaped("advanced_wireless_part", <contenttweaker:advanced_wreciever>, [
+recipes.addShaped("advanced_wireless_part", <contenttweaker:advancedwreciever>, [
 	[null, <gregtech:meta_item_1:32683>, null], 
 	[<gregtech:meta_item_1:12072>, <appliedenergistics2:material:9>, <gregtech:meta_item_1:12072>], 
 	[null, <gregtech:meta_item_1:12072>, null]]);
@@ -203,7 +203,7 @@ recipes.remove(<appliedenergistics2:material:41>);
 recipes.addShaped("wireless_part", <appliedenergistics2:material:41>, [
 	[null,<gregtech:meta_item_1:32681>, null],
 	[<gregtech:meta_item_1:12001>, <appliedenergistics2:material:9>, <gregtech:meta_item_1:12001>],
-	[null, <gregtech:meta_item_1:32681>, null]]);
+	[null, <gregtech:meta_item_1:12001>, null]]);
 
 //Level Emitters	
 recipes.remove(<appliedenergistics2:part:280>);		
@@ -350,7 +350,7 @@ recipes.addShaped(<appliedenergistics2:material:38>, [
 recipes.removeByRecipeName("ae2wtlib:booster_card_old");
 recipes.addShaped(<ae2wtlib:infinity_booster_card>, [
 	[<gregtech:meta_item_1:32724>, null, <gregtech:meta_item_1:32724>],
-	[null, <contenttweaker:advanced_wreciever>, null],
+	[null, <contenttweaker:advancedwreciever>, null],
 	[null, null, null]]);
 
 //skystone and skystone dust

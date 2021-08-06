@@ -236,5 +236,5 @@ item.contenttweaker.pulsatingmesh.name=Pulsating Mesh
 tile.contenttweaker.simulation_casing.name=Naquadah-Plated Dark Steel Machine Casing
 tile.contenttweaker.simulation_casing_2.name=Naquadah Casing
 
-fluid.difficulty_essence=Difficulty Essence
-item.contenttweaker.advanced_wreciever.name= Advanced Wireless Receiver
+fluid.difficultyessence=Difficulty Essence
+item.contenttweaker.advancedwreciever.name= Advanced Wireless Receiver
