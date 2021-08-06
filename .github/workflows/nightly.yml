@@ -39,7 +39,7 @@ jobs:
 
       - name: "Build everything and prune cache"
         working-directory: ./buildtools
-        run: npx gulp buildAllAndPrune
+        run: npx gulp buildClientAndPrune
 
       ##
       ## Upload artifacts.
@@ -56,12 +56,12 @@ jobs:
           path: |
             build/client/**/*
 
-      - name: "Upload server artifact"
-        uses: actions/upload-artifact@v2
-        with:
-          name: ${{ steps.artifactNames.outputs.server }}
-          path: |
-            build/server/**/*
+#      - name: "Upload server artifact"
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: ${{ steps.artifactNames.outputs.server }}
+#          path: |
+#            build/server/**/*
 
       - name: "Upload lang artifact"
         uses: actions/upload-artifact@v2
