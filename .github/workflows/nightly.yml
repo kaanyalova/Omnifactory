@@ -3,20 +3,16 @@ name: Nightly Builds
 on:
   push:
     branches:
-      - dev
+      - custom
     tags-ignore:
       - '**'
+  workflow_dispatch:
 
 jobs:
   nightly:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Cancel previous runs
-        uses: styfle/cancel-workflow-action@0.8.0
-        with:
-          access_token: ${{ secrets.GITHUB_TOKEN }}
-
       - uses: actions/checkout@v2
       - run: git fetch --prune --unshallow --tags --force
 
@@ -40,14 +36,6 @@ jobs:
       - name: "Download NPM packages"
         working-directory: ./buildtools
         run: npm ci
-
-      - name: "Check environmental variables"
-        working-directory: ./buildtools
-        run: npx gulp check
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CURSEFORGE_PROJECT_ID: ${{ secrets.CURSEFORGE_PROJECT_ID }}
-          CURSEFORGE_API_TOKEN: ${{ secrets.CURSEFORGE_API_TOKEN }}
 
       - name: "Build everything and prune cache"
         working-directory: ./buildtools
@@ -88,10 +76,3 @@ jobs:
           name: changelog
           path: |
             build/shared/CHANGELOG.md
-
-      - name: "Fire Discord webhook"
-        working-directory: ./buildtools
-        run: npx gulp fireNightlyWebhook
-        env:
-          GITHUB_RUN_ID: ${{ github.run_id }}
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
