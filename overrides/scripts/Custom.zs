@@ -46,26 +46,48 @@ recipes.addRecipe("toolforge", <tconstruct:toolforge:0>.withTag({textureBlock: {
 recipes.removeByMod("rftoolspower");
 
 //tier one
-recipes.addRecipe("rfcell1", <rftoolspower:cell1>, [
+recipes.addShaped("rfcell1", <rftoolspower:cell1>, [
 [<gregtech:meta_item_1:32538>, <enderio:block_cap_bank:3>, <gregtech:meta_item_1:32538>],
 [<thermalexpansion:capacitor:1>, <gregtech:meta_item_1:32671>, <thermalexpansion:capacitor:1>],
 [<gregtech:meta_item_1:32538>, <thermalexpansion:capacitor:1> , <gregtech:meta_item_1:32538>]]);
 
 //tier two
-recipes.addRecipe("rfcell2", <rftoolspower:cell2>, [
+recipes.addShaped("rfcell2", <rftoolspower:cell2>, [
 [<gregtech:meta_item_2:32213>, <rftoolspower:cell1>,<gregtech:meta_item_2:32213>],
 [<thermalexpansion:capacitor:2>, <gregtech:meta_item_1:32672>, <thermalexpansion:capacitor:2>],
 [<gregtech:meta_item_2:32213>, <thermalexpansion:capacitor:2>,<gregtech:meta_item_2:32213>]]);
 
 //tier three
-recipes.addRecipe("rfcell3", <rftoolspower:cell3>, [
+recipes.addShaped("rfcell3", <rftoolspower:cell3>, [
 [<gregtech:meta_item_1:32597>, <rftoolspower:cell2:0>, <gregtech:meta_item_1:32597>],
 [<thermalexpansion:capacitor:3>,<gregtech:meta_item_1:32673>,<thermalexpansion:capacitor:3>],
 [<gregtech:meta_item_1:32597>, <thermalexpansion:capacitor:3>, <gregtech:meta_item_1:32597>]]);
 
 //screen
-recipes.addRecipe("rfscreen", <rftoolspower:information_screen>, [
+recipes.addShaped("rfscreen", <rftoolspower:information_screen>, [
 [null, null, null],
 [<minecraft:glass_pane>, <minecraft:glass_pane>, <minecraft:glass_pane>],
 [<minecraft:redstone>, <minecraft:iron_block>, <minecraft:redstone> ]]);
 
+//make advanced filter recipe easier
+recipes.remove(<enderio:item_advanced_item_filter>);
+recipes.addShapeless("filter_advanced", <enderio:item_advanced_item_filter>, [
+[<enderio:item_basic_item_filter>, <ore:circuitBasic>]]);
+
+//make big item filter recipe easier
+recipes.remove(<enderio:item_big_item_filter>);
+recipes.addShapeless("filter_big", <enderio:item_big_item_filter>, [
+[<enderio:item_basic_item_filter>, <gregtech:meta_item_1:32631>]]);
+
+//make big advanced filter recipe easier
+recipes.remove(<enderio:item_big_advanced_item_filter>);
+recipes.addShapeless("filter_big_advanced" ,<enderio:item_big_advanced_item_filter>, [
+[<ore:circuitBasic>, <enderio:item_basic_item_filter>, <gregtech:meta_item_1:32631>]]);
+recipes.addShapeless("filter_big_advanced0", <enderio:item_big_advanced_item_filter>, [
+[<enderio:item_big_item_filter>, <ore:circuitBasic>]]);
+recipes.addShapeless("filter_big_advanced1", <enderio:item_big_advanced_item_filter>, [
+[<enderio:item_advanced_item_filter>, <gregtech:meta_item_1:32631>]]);
+
+//make limited item filter recipe easier
+recipes.addShapeless("filter_limited", <enderio:item_limited_item_filter>,[
+<gregtech:meta_item_1:32651>, <enderio:item_advanced_item_filter>]);
